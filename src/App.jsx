@@ -7,9 +7,16 @@ function App() {
   return (
     <>
     
-      <div className={s.quadrado}></div>
-      <div className={s.quadradoTribo}><h2>tribal <br/> logistics</h2></div>
-      <div className={s.quadradoEstoque}></div>
+      <div className={s.quadrado}><h1>TRIBAL LOGISTICS</h1></div>
+      <div className={s.quadradoTribo}>
+        <h2>Tribal <br/> ㅤ ㅤLogistics</h2>
+        <p>Concebindo pra revolucionar o <br /> mercado logístico</p>
+      </div>
+      <div className={s.quadradoEstoque}>
+        <h2>Problemas na <br />logística?</h2>
+        <p>A Tribal Logistics estará aqui para resolver <br /> seu problema</p>
+      </div>
+      <button className={s.botaoLogin}>login</button>
     </>
   )
 }
