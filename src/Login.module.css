@@ -7,11 +7,11 @@ body{
 }
 .quadrado{
   width: 2300px;
-  height: 1100px;
+  height: 900px;
   background: linear-gradient(90deg, #FF7700, #331800 );
-  rotate: 10deg;
+  rotate: -5deg;
   margin-left: -60px;
-  margin-top: 0px;
+  margin-top: -20px;
 }
 .quadrado h1{
   position: absolute;
@@ -19,7 +19,90 @@ body{
   font-size: 128px;
   font-family: 'Almarai', sans-serif;
   text-shadow: 2px 7px 10px black;
-  margin-left: 600px;
-  margin-top: 200px;
+  margin-left: 200px;
+  margin-top: 100px;
   letter-spacing: 10px;
+}
+.quadradoLogin{
+  width: 506px;
+  height: 364px;
+  background: #e26a01;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  rotate: -5deg;
+  transition: all 200ms ease-in-out;
+  rotate: 0deg;
+  border-radius: 10px;
+  
+}
+.Placeholders{
+  font-family: 'Almarai', sans-serif;
+  font-size: 16px;
+  color: black;
+  margin-top: 50px;
+  margin-left: 31px;
+}
+input{
+  font-family: 'Almarai', sans-serif;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.61);
+  margin-left: 30px;
+  padding: 16px 12px;
+  width: 400px;
+  background: none;
+  transition: all 200ms ease-in-out;
+  outline: none;
+  margin-top: -10px;
+  font-size: 16px;
+}
+
+input::placeholder{
+  color: rgb(250, 250, 250);
+  filter: opacity(0.5);
+}
+input:hover{
+  border: 1px solid white;
+  transition: all 200ms ease-in-out;
+}
+.quadradoLogin .esqueceuocu{
+  margin-top: 5px;
+  margin-left: 31px;
+  filter: opacity(0.5);
+}
+.Email{
+  margin-top: -25px;
+}
+.Senha{
+  margin-top: -20px;
+}
+.Senha p{
+  margin-bottom: 20px;
+}
+.Botao{
+  padding: 12px 12px;
+  margin-left: 125px;
+  margin-top: 10px;
+  width: 250px;
+  background-color: #3f3f3f;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Almarai', sans-serif;
+  font-size: 16px;
+  border: none;
+  text-align: center;
+}
+.Botao:hover{
+  background-color: #2a2a2a;
+  transition: all 200ms ease-in-out;
+}
+.textobotaocadastro{
+  margin-top: 10px;
+  margin-left: -20px;
+  filter: opacity(0.4);
+  text-align: center;
+  line-height: 25px;
+  text-decoration: none;
+  
 }

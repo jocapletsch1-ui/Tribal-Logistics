@@ -1,0 +1,122 @@
+body {
+  background-color: black;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: 'Almarai', sans-serif;
+  margin: 0;
+}
+
+.quadrado {
+  width: 2300px;
+  height: 900px;
+  background: linear-gradient(90deg, #FF7700, #331800);
+  transform: rotate(-5deg);
+  margin-left: -60px;
+  margin-top: -20px;
+  position: relative;
+}
+
+.quadrado h1 {
+  position: absolute;
+  filter: opacity(0.4);
+  font-size: 128px;
+  font-family: 'Almarai', sans-serif;
+  text-shadow: 2px 7px 10px black;
+  margin-left: 200px;
+  margin-top: 100px;
+  letter-spacing: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.quadradoLogin {
+  width: 500px;
+  background: #e26a01;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 16px 18px 18px;
+  box-sizing: border-box;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-family: 'Almarai', sans-serif;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 8px;
+  margin-left: 2px;
+  line-height: 1.3;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  font-family: 'Almarai', sans-serif;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  padding: 12px 12px;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  transition: all 200ms ease-in-out;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+input:hover,
+input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  box-shadow: none;
+  transition: all 200ms ease-in-out;
+}
+
+.botao {
+  display: block;
+  width: 220px;
+  height: 44px;
+  margin: 18px auto 10px;
+  padding: 10px 12px;
+  background-color: #3b3b3b;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Almarai', sans-serif;
+  font-size: 18px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.botao:hover {
+  background-color: #2a2a2a;
+  transition: all 200ms ease-in-out;
+}
+
+.linkLogin {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 200ms ease-in-out;
+}
+
+.linkLogin:hover {
+  text-decoration: underline;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}

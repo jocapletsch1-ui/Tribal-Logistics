@@ -3,30 +3,34 @@ import s from './Login.module.css'
 import { Link } from 'react-router'
 
 
-function App() {
+function Login() {
   const [] = useState(0)
 
   return (
     <>
     
       <div className={s.quadrado}><h1>TRIBAL LOGISTICS</h1></div>
-      <div className={s.quadradoTribo}>
-        <h2>Tribal <br/> ㅤ ㅤLogistics</h2>
-        <p>Concebindo pra revolucionar o <br /> mercado logístico</p>
-      </div>
-      <div className={s.quadradoEstoque}>
-        <h2>Problemas na <br />logística?</h2>
-        <p>A Tribal Logistics estará aqui para resolver <br /> seu problema</p>
-      </div>
-      <div className={s.grupoLogin}>
-        <Link to="/Login" className={s.botaoLogin} type="button">
-          login
-          <span className={s.setaLogin} aria-hidden="true">→</span>
-        </Link>
-        <p className={s.mensagemLogin}>Tribal Logistics · Gestão de estoque e cargas</p>
-      </div>
+        <div className={s.quadradoTribo}>
+          <div className={s.quadradoLogin}>
+            <div className={s.Email}> 
+              <p className={s.Placeholders}>E-mail</p>
+              <input type="text"  placeholder="exemplo@gmail.com" />
+            </div>
+            <div className={s.Senha}>
+              <p className={s.Placeholders}>Senha</p>
+              <input type="password" className={s.Senha} placeholder="12345678" />
+            </div>
+            <p className={s.esqueceuocu}>Esqueceu sua senha?</p>
+            <Link to="/login"><button className={s.Botao}>Login</button></Link>
+            <Link to="/cadastro">
+              <p className={s.textobotaocadastro}>Não tem uma conta? <br />Cadastre-se</p>
+            </Link>
+          </div>
+        </div>
+
+        
     </>
   )
 }
 
-export default App
+export default Login
