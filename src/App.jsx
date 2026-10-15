@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import s from './App.module.css'
+import { Link } from 'react-router'
+
 
 function App() {
   const [] = useState(0)
@@ -16,7 +18,13 @@ function App() {
         <h2>Problemas na <br />logística?</h2>
         <p>A Tribal Logistics estará aqui para resolver <br /> seu problema</p>
       </div>
-      <button className={s.botaoLogin}>login</button>
+      <div className={s.grupoLogin}>
+        <Link to="/Login" className={s.botaoLogin} type="button">
+          login
+          <span className={s.setaLogin} aria-hidden="true">→</span>
+        </Link>
+        <p className={s.mensagemLogin}>Tribal Logistics · Gestão de estoque e cargas</p>
+      </div>
     </>
   )
 }

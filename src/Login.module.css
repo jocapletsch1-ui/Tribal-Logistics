@@ -1,0 +1,25 @@
+body{
+  background-color: black;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: 'Almarai', sans-serif;
+}
+.quadrado{
+  width: 2300px;
+  height: 1100px;
+  background: linear-gradient(90deg, #FF7700, #331800 );
+  rotate: 10deg;
+  margin-left: -60px;
+  margin-top: 0px;
+}
+.quadrado h1{
+  position: absolute;
+  filter: opacity(0.4);
+  font-size: 128px;
+  font-family: 'Almarai', sans-serif;
+  text-shadow: 2px 7px 10px black;
+  margin-left: 600px;
+  margin-top: 200px;
+  letter-spacing: 10px;
+}
