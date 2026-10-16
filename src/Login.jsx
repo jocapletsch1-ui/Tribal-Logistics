@@ -1,11 +1,8 @@
-import { useState } from 'react'
 import s from './Login.module.css'
 import { Link } from 'react-router'
 
 
 function Login() {
-  const [] = useState(0)
-
   return (
     <>
     
@@ -21,7 +18,7 @@ function Login() {
               <input type="password" className={s.Senha} placeholder="12345678" />
             </div>
             <p className={s.esqueceuocu}>Esqueceu sua senha?</p>
-            <Link to="/login"><button className={s.Botao}>Login</button></Link>
+            <Link to="/home"><button className={s.Botao}>Login</button></Link>
             <Link to="/cadastro">
               <p className={s.textobotaocadastro}>Não tem uma conta? <br />Cadastre-se</p>
             </Link>

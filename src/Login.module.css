@@ -106,3 +106,8 @@ input:hover{
   text-decoration: none;
   
 }
+.textobotaocadastro:hover {
+  
+  filter: opacity(1);
+  transition: all 200ms ease-in-out;
+}

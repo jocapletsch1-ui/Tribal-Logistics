@@ -33,7 +33,7 @@ body {
   width: 500px;
   background: #e26a01;
   position: absolute;
-  top: 50%;
+  top: 67%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
@@ -55,7 +55,7 @@ body {
   line-height: 1.3;
 }
 
-input {
+.inputCadastro {
   display: block;
   width: 100%;
   height: 46px;
@@ -72,12 +72,12 @@ input {
   transition: all 200ms ease-in-out;
 }
 
-input::placeholder {
+.inputCadastro::placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
 
-input:hover,
-input:focus {
+.inputCadastro:hover,
+.inputCadastro:focus {
   border: 1px solid rgba(0, 0, 0, 0.9);
   box-shadow: none;
   transition: all 200ms ease-in-out;
@@ -113,10 +113,10 @@ input:focus {
   text-decoration: none;
   font-size: 15px;
   transition: all 200ms ease-in-out;
+  opacity: 0.2;
 }
 
 .linkLogin:hover {
-  text-decoration: underline;
   opacity: 1;
   transition: all 200ms ease-in-out;
 }

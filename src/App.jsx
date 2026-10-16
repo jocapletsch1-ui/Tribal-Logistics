@@ -1,11 +1,8 @@
-import { useState } from 'react'
 import s from './App.module.css'
 import { Link } from 'react-router'
 
 
 function App() {
-  const [] = useState(0)
-
   return (
     <>
     
