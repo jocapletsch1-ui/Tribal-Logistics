@@ -42,6 +42,8 @@ const renderActiveShape = ({
         startAngle={startAngle}
         endAngle={endAngle}
         fill={fill}
+        stroke='#000000'
+        strokeWidth={0}
       />
       <Sector
         cx={cx}
@@ -51,6 +53,8 @@ const renderActiveShape = ({
         innerRadius={(outerRadius ?? 0) + 6}
         outerRadius={(outerRadius ?? 0) + 10}
         fill={fill}
+        stroke="  #000000"
+        strokeWidth={2}
       />
       <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
@@ -92,7 +96,7 @@ function GraficoPie({
                 />
                 <Tooltip content={() => null}  cursor={{ fill: 'rgba(99, 102, 241, 0.15)' }} defaultIndex={defaultIndex} />
             </PieChart>
-
+                
         </>
     )
 }

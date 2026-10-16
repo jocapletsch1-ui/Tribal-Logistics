@@ -25,10 +25,10 @@ body{
 }
 .quadradoLogin{
   width: 506px;
-  height: 364px;
+  height: 475px;
   background: #e26a01;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, 50%);
   rotate: -5deg;

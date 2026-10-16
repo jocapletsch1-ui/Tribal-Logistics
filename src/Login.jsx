@@ -10,6 +10,10 @@ function Login() {
         <div className={s.quadradoTribo}>
           <div className={s.quadradoLogin}>
             <div className={s.Email}> 
+              <p className={s.Placeholders}>Nome</p>
+              <input className={s.nome} type="text"  placeholder="Joaquim da Luz Oberziner" />
+            </div>
+            <div className={s.Email}> 
               <p className={s.Placeholders}>E-mail</p>
               <input type="text"  placeholder="exemplo@gmail.com" />
             </div>

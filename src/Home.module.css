@@ -32,3 +32,40 @@ body{
     padding: 20px;
     border-radius: 10px;
 }
+.titulo{
+  letter-spacing: 15px;
+  color: white;
+  margin-left: 20px;
+  font-size: 48px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+.tituloPagina{
+  color: white;
+  font-size: 48px;
+  font-weight: 300;
+}
+.parteDeCima{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 200px;
+}
+.parteDeCima p{
+  color: white;
+  filter: opacity(0.5);
+  font-size: 20px;
+}
+.nav p{
+  margin-top: -30px;  
+}
+.botaoCarga{
+  position: absolute;
+  right: 250px;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: #FF7700;
+  font-size: 16px;
+  border: none;
+}
