@@ -14,7 +14,7 @@ const renderActiveShape = ({
   startAngle,
   endAngle,
   fill,
-  payload,
+
   percent,
   value,
 }) => {
@@ -31,9 +31,7 @@ const renderActiveShape = ({
 
   return (
     <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-        {payload.name}
-      </text>
+      
       <Sector
         cx={cx}
         cy={cy}
@@ -60,7 +58,7 @@ const renderActiveShape = ({
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#ffef08">{`Quantidade: ${value}`}</text>
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#df0101">
-        {`(Rate ${((percent ?? 1) * 100).toFixed(2)}%)`}
+        {`(${((percent ?? 1) * 100).toFixed(2)}%)`}
       </text>
     </g>
   );
@@ -75,7 +73,7 @@ function GraficoPie({
 
 
             <PieChart
-                style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1, transform: '200ms all ease-in-out' }}
+                style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1, transform: '0.2s all ease-in-out',  }}
                 responsive
                 margin={{
                     top: 50,

@@ -1,71 +1,197 @@
-body{
-  background-color: black;
-  overflow-y: hidden;
+.conteudo{
+  --laranja: #ff7700;
+  --laranja-escuro: #331800;
+  position: relative;
+  min-height: 100vh;
   overflow-x: hidden;
-  font-family: 'Almarai', sans-serif;
-}
-.quadrado{
-  width: 2300px;
-  height: 900px;
-  background: linear-gradient(90deg, #FF7700, #331800 );
-  rotate: -5deg;
-  margin-left: -60px;
-  margin-top: -20px;
-}
-.quadrado h1{
-  position: absolute;
-  filter: opacity(0.4);
-  font-size: 128px;
-  font-family: 'Almarai', sans-serif;
-  text-shadow: 2px 7px 10px black;
-  margin-left: 200px;
-  margin-top: 100px;
-  letter-spacing: 10px;
+  overflow-y: hidden;
 }
 
-.graficos{
-    width: auto;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;  
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-}
-.titulo{
-  letter-spacing: 15px;
-  color: white;
-  margin-left: 20px;
-  font-size: 48px;
-  font-weight: 300;
-  margin-top: 10px;
-}
-.tituloPagina{
-  color: white;
-  font-size: 48px;
-  font-weight: 300;
-}
+/* Cabeçalho */
 .parteDeCima{
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 200px;
+  margin-top: -60px
 }
-.parteDeCima p{
+.titulo{
+  margin: 0 0 0 20px;
   color: white;
-  filter: opacity(0.5);
-  font-size: 20px;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 15px;
+}
+.tituloLinha2{
+  display: block;
+  margin-left: 150px;
+}
+
+.nav{
+  display: flex;
+  flex-direction: column;
+}
+.tituloPagina{
+  margin: 0;
+  color: white;
+  font-size: 48px;
+  font-weight: 300;
 }
 .nav p{
-  margin-top: -30px;  
+  margin: 0;
+  color: rgb(255 255 255 / 0.5);
+  font-size: 20px;
 }
+
+/* Botão */
 .botaoCarga{
-  position: absolute;
-  right: 250px;
-  border-radius: 10px;
   width: 200px;
-  height: 50px;
-  background-color: #FF7700;
-  font-size: 16px;
+  height: 45px;
+  margin-left: 250px;
   border: none;
+  border-radius: 10px;
+  background-color: var(--laranja);
+  font-size: 16px;
+  cursor: pointer;
+}
+.botaoCarga:hover{
+  background-color: #ad5202;
+  filter: opacity(0.8);
+  transition: 0.2s ease-in-out;
+}
+
+/* Gráficos */
+.areaGraficos{
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 500px) minmax(0, 500px);
+  gap: 16px;
+  align-items: start;
+  margin-top: 24px;
+  min-height: 600px;
+}
+.quadrado{
+  position: absolute;
+  inset: 80px -10% 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--laranja-escuro) , #7c3b01);
+  rotate: 5deg;
+  filter: blur(6.7px);
+  pointer-events: none;
+  height: 600px;
+}
+
+/* Card do gráfico de pizza: 450 x 278 */
+.graficos1{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  max-width: 100%;
+  height: 278px;
+  box-sizing: border-box;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--laranja-escuro), #000000);
+  margin-left: 50px;
+  margin-top: 175px;
+
+}
+.tituloGrafico{
+  margin: 0 0 12px;
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+.corpoGrafico{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+
+/* Donut: o gráfico original (500x500) é reduzido e centralizado */
+.donut{
+  position: relative;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  
+}
+.donutGrafico{
+  position: absolute;
+  top: -130px;
+  left: -110px;
+  width: 500px;
+  height: 500px;
+  transform: scale(0.8);
+  transform-origin: top left;
+}
+.centroDonut{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.totalDonut{
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+.textoDonut{
+  margin-top: 4px;
+  color: rgb(255 255 255 / 0.5);
+  font-size: 14px;
+}
+
+/* Legenda */
+.legendaGrafico{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.itemLegenda{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.marcador{
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+.nomeLegenda{
+  margin: 0;
+  color: white;
+  font-size: 15px;
+}
+.valorLegenda{
+  margin: 2px 0 0;
+  color: rgb(255 255 255 / 0.5);
+  font-size: 13px;
+}
+
+.graficos2{
+  margin-top: 175px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 500px;
+  height: 278px;
+  bottom: 50px;
+  padding-bottom: 50px;
+  background: linear-gradient(90deg, var(--laranja-escuro), #000000);
 }
