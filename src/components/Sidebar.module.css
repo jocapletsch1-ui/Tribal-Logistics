@@ -9,8 +9,7 @@
   padding: 43px 15px 24px;
   background: linear-gradient(155deg, #7a3300 0%, #e56600 58%, #a94700 100%);
   color: #fff;
-  margin-left: -100px;
-  z-index: 999;
+  z-index: 2;
 }
 
 .perfilGestor {

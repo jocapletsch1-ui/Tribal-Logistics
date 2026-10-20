@@ -32,11 +32,10 @@
   grid-template-columns: minmax(0, 42%) minmax(0, 1fr) auto;
   align-items: center;
   gap: 20px;
-
+  margin-left: 15px;
   width: 100%;
   max-width: 1400px;
   min-height: 112px;
-  margin: 0 auto;
   padding-top: 10px;
   box-sizing: border-box;
 }
@@ -81,23 +80,25 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 123px;
-  min-height: 30px;
+  width: 175px;
+  height: 37.5px;
   padding: 0 16px;
   box-sizing: border-box;
   border: none;
   border-radius: 10px;
   background: var(--laranja);
   color: #000;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: #ff7700ad 0.2s ease;
 }
 
 .botaoCarga:hover {
-  background: #ff983d;
+  background: #ff770085;
+  transition: ease-in-out 200ms;
+
 }
 
 /* Cards de resumo */
@@ -116,6 +117,7 @@
 }
 
 .cardResumo {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -136,7 +138,12 @@
   transition: transform 0.2s ease;
 }
 
+.cardResumo + .cardResumo {
+  margin-left: -7px;
+}
+
 .cardResumo:hover {
+  z-index: 1;
   transform: translateY(-3px);
 }
 
@@ -257,12 +264,9 @@
 
 .donutGrafico {
   position: absolute;
-  top: -101px;
-  left: -82px;
-  width: 390px;
-  height: 390px;
-  transform: scale(0.65);
-  transform-origin: top left;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .centroDonut {
@@ -423,6 +427,10 @@
     gap: 10px;
   }
 
+  .cardResumo + .cardResumo {
+    margin-left: 0;
+  }
+
   .cardResumo {
     gap: 8px;
     padding: 12px 10px;
@@ -509,6 +517,10 @@
     max-width: none;
     margin: 30px auto 0;
     gap: 12px;
+  }
+
+  .cardResumo + .cardResumo {
+    margin-left: 0;
   }
 
   .cardResumo {
