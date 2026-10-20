@@ -1,9 +1,8 @@
-import Sidebar from './components/Sidebar'
+import s from './CadastroCargas.module.css'
 
 function CadastroCargas() {
   return (
     <>
-      <Sidebar />
      
     </>
   )
