@@ -1,0 +1,121 @@
+.sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 100%;
+  padding: 43px 15px 24px;
+  background: linear-gradient(155deg, #7a3300 0%, #e56600 58%, #a94700 100%);
+  color: #fff;
+  margin-left: -100px;
+  z-index: 999;
+}
+
+.perfilGestor {
+  padding: 0 0 18px;
+  border-bottom: 1px solid rgb(255 255 255 / 22%);
+}
+
+.perfilGestor h2 {
+  margin: 0 0 18px;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.perfilGestor p,
+.perfilGestor span {
+  display: block;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.perfilGestor span {
+  color: rgb(255 255 255 / 75%);
+}
+
+.nav {
+  display: grid;
+  gap: 7px;
+  padding-top: 20px;
+}
+
+.aba {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 43px;
+  padding: 0 10px;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.aba:hover,
+.ativa {
+  background: #ff7700;
+  color: #080808;
+}
+
+.icone {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+}
+
+.mensagem {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.mensagem h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.mensagem p {
+  margin: 0;
+  color: rgb(255 255 255 / 72%);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .perfilGestor,
+  .mensagem {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 6px;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .aba {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 9px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .icone {
+    flex-basis: 15px;
+    width: 15px;
+    height: 15px;
+  }
+}
