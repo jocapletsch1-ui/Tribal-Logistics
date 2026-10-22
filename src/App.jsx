@@ -16,7 +16,7 @@ function App() {
         <p>A Tribal Logistics estará aqui para resolver <br /> seu problema</p>
       </div>
       <div className={s.grupoLogin}>
-        <Link to="/Login" className={s.botaoLogin} type="button">
+        <Link to="/login" className={s.botaoLogin} type="button">
           login
           <span className={s.setaLogin} aria-hidden="true">→</span>
         </Link>

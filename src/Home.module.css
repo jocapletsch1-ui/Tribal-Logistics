@@ -258,8 +258,9 @@
 .donut {
   position: relative;
   flex-shrink: 0;
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
+  margin-left: -25px;
 }
 
 .donutGrafico {
@@ -314,8 +315,8 @@
 
 .marcador {
   flex-shrink: 0;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   margin-top: 4px;
   border-radius: 2px;
 }
@@ -323,13 +324,13 @@
 .nomeLegenda {
   margin: 0;
   color: #fff;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .valorLegenda {
   margin: 3px 0 0;
   color: rgb(255 255 255 / 55%);
-  font-size: 9px;
+  font-size: 15px;
 }
 
 /* Card do segundo gráfico */
@@ -368,7 +369,7 @@
 
   width: 100%;
   min-width: 0;
-  height: 230px;
+  height: 450px;
   margin: 0;
   padding: 0;
 

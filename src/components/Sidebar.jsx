@@ -111,7 +111,7 @@ function Sidebar() {
             <span>{item.nome}</span>
           </Link>
         ))}
-        <Link to="/Login" className={s.aba}>
+        <Link to="/login" className={s.aba}>  
           <Icone nome="sair" />
           <span>Sair</span>
         </Link>

@@ -2,3 +2,46 @@ body{
     background-color: black;
     overflow-y: hidden;
 }
+
+.conteudo {
+    --laranja: #ff7700;
+    --laranja-escuro: #331800;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 225px;
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: auto;
+    font-family: "Almarai", sans-serif;
+    color: #fff;
+    background: #000;
+}
+
+@media (max-width: 760px) {
+    .conteudo {
+        grid-template-columns: minmax(0, 1fr);
+        height: 100vh;
+        min-height: 0;
+        overflow: auto;
+    }
+}
+.quadradoLista{
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    box-sizing: border-box;
+    width: min(100%, 1008px);
+    height: min(758px, calc(100vh - 48px));
+    background: linear-gradient(90deg, #ff7700, #994700);
+}
+
+@media (max-width: 760px) {
+    .quadradoLista {
+        grid-column: 1;
+        grid-row: 2;
+        width: calc(100% - 32px);
+        height: min(758px, calc(100vh - 150px));
+    }
+}
