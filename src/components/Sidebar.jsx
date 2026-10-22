@@ -10,7 +10,6 @@ const itens = [
     icone: "lista",
   },
   { nome: "Sobre", caminho: "/", icone: "sobre" },
-  { nome: "Perfil", caminho: "/home#perfil", icone: "perfil" },
 ];
 
 const caminhosIcones = {
@@ -39,12 +38,6 @@ const caminhosIcones = {
     <>
       <circle cx="12" cy="12" r="9" />
       <path d="M12 11v5m0-8h.01" />
-    </>
-  ),
-  perfil: (
-    <>
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4 21a8 8 0 0 1 16 0" />
     </>
   ),
   sair: (
@@ -77,7 +70,7 @@ function Sidebar() {
 
   return (
     <aside className={s.sidebar}>
-      <div className={s.perfilGestor} id="perfil">
+      <div className={s.perfilGestor}>
         <h2>Área do gestor</h2>
         <p>Cristian Bilizário</p>
         <span>Metalúrgica Sul Ltda.</span>

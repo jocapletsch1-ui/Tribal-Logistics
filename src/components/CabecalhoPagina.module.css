@@ -1,0 +1,100 @@
+.cabecalho {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(16px, 4vw, 48px);
+  width: 100%;
+  max-width: 1400px;
+  min-height: 112px;
+  margin: 0 auto;
+  padding: 10px 15px 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.comAcao {
+  grid-template-columns: minmax(0, 42%) minmax(0, 1fr) auto;
+  gap: 20px;
+}
+
+.marca {
+  min-width: 0;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 300;
+  letter-spacing: clamp(5px, 0.8vw, 11px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.marcaLinha2 {
+  display: block;
+  margin-left: clamp(36px, 7vw, 110px);
+}
+
+.identificacaoPagina {
+  min-width: 0;
+}
+
+.titulo {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 300;
+  overflow-wrap: anywhere;
+}
+
+.descricao {
+  margin: 5px 0 0;
+  color: rgb(255 255 255 / 55%);
+  font-size: 13px;
+}
+
+.acao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 175px;
+  min-height: 38px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #ff7700;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.acao:hover {
+  background: #ff770085;
+}
+
+@media (max-width: 760px) {
+  .cabecalho {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    min-height: 0;
+    padding: 16px 0 0;
+  }
+
+  .comAcao {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .marca,
+  .titulo {
+    font-size: 29px;
+  }
+
+  .marca {
+    letter-spacing: 9px;
+  }
+
+  .marcaLinha2 {
+    margin-left: 76px;
+  }
+}

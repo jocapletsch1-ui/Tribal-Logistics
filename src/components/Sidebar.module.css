@@ -6,15 +6,16 @@
   box-sizing: border-box;
   min-width: 0;
   min-height: 100%;
-  padding: 43px 15px 24px;
+  padding: 103px 15px 24px;
   background: linear-gradient(155deg, #7a3300 0%, #e56600 58%, #a94700 100%);
   color: #fff;
   z-index: 2;
 }
 
 .perfilGestor {
-  padding: 0 0 18px;
+  padding: 0px 0 18px;
   border-bottom: 1px solid rgb(255 255 255 / 22%);
+  margin-top: -40px;
 }
 
 .perfilGestor h2 {
@@ -38,7 +39,7 @@
 .nav {
   display: grid;
   gap: 7px;
-  padding-top: 20px;
+  padding-top: 12px;
 }
 
 .aba {
@@ -92,8 +93,11 @@
     padding: 16px;
   }
 
-  .perfilGestor,
   .mensagem {
+    display: none;
+  }
+
+  .perfilGestor {
     display: none;
   }
 

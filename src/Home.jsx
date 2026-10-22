@@ -1,9 +1,9 @@
 import GraficoBarras from "./components/GraficoBarras";
 import GraficoPie from "./components/GraficoPie";
 import TabelaCargas from "./components/TabelaCargas";
+import CabecalhoPagina from "./components/CabecalhoPagina";
 import Sidebar from "./components/Sidebar";
 import s from "./Home.module.css";
-import { Link } from "react-router";
 
 const legendaPie = [
   { nome: "Pendentes", valor: 23, cor: "#FFFFFF" },
@@ -29,21 +29,11 @@ function Home() {
       <Sidebar />
 
       <div className={s.pagina}>
-        <header className={s.parteDeCima}>
-          <h1 className={s.titulo}>
-            Tribal
-            <span className={s.tituloLinha2}>Logistics</span>
-          </h1>
-
-          <div className={s.intro}>
-            <h2 className={s.tituloPagina}>Dashboard</h2>
-            <p>Olá gestor, bem-vindo ao menu de cargas.</p>
-          </div>
-
-          <Link to="/cadastrocargas" className={s.botaoCarga}>
-            + Nova carga
-          </Link>
-        </header>
+        <CabecalhoPagina
+          titulo="Dashboard"
+          descricao="Olá gestor, bem-vindo ao menu de cargas."
+          acao={{ texto: "+ Nova carga", caminho: "/cadastrocargas" }}
+        />
 
         <section
           className={s.resumoCards}
