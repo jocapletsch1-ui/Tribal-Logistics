@@ -1,165 +1,208 @@
-body{
-    background-color: black;
-    overflow-y: hidden;
+body {
+  background-color: black;
+  overflow-y: hidden;
 }
 
 .conteudo {
-    --laranja: #ff7700;
-    --laranja-escuro: #331800;
+  --laranja: #ff7700;
+  --laranja-escuro: #331800;
 
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 225px;
-    grid-template-rows: auto minmax(0, 1fr);
-    position: relative;
-    box-sizing: border-box;
-    height: 100vh;
-    overflow: auto;
-    font-family: "Almarai", sans-serif;
-    color: #fff;
-    background: #000;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 225px;
+  grid-template-rows: auto minmax(0, 1fr);
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+  font-family: "Almarai", sans-serif;
+  color: #fff;
+  background: #000;
+  margin-left: -300px;
 }
 
 @media (max-width: 760px) {
-    .conteudo {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto auto minmax(0, 1fr);
-        height: 100vh;
-        min-height: 0;
-        overflow: auto;
-    }
+  .conteudo {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+    height: 100vh;
+    min-height: 0;
+    overflow: auto;
+  }
 
-    .conteudo > aside {
-        grid-column: 1;
-        grid-row: 1;
-    }
+  .conteudo > aside {
+    grid-column: 1;
+    grid-row: 1;
+  }
 
-    .conteudo > header {
-        grid-column: 1;
-        grid-row: 2;
-    }
-}
-.quadradoLista{
+  .conteudo > header {
     grid-column: 1;
     grid-row: 2;
-    justify-self: center;
-    align-self: start;
-    box-sizing: border-box;
-    width: min(100%, 1008px);
-    height: min(800px, calc(100vh - 160px));
-    background: linear-gradient(90deg, #ff7700, #994700);
-    border-radius: 20px;
-    margin: 0 auto 24px;
+  }
+}
+.quadradoLista {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+  align-self: start;
+  box-sizing: border-box;
+  width: min(100%, 1008px);
+  height: min(800px, calc(100vh - 160px));
+  background: linear-gradient(90deg, #ff7700 25%, #994700 100%);
+  border-radius: 20px;
+  margin: 0 auto 24px;
+  margin-left: 330px;
+  margin-top: 30px;
 }
 
 .conteudo > header {
-    grid-column: 1;
-    grid-row: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .conteudo > aside {
-    grid-column: 2;
-    grid-row: 1 / span 2;
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
 @media (max-width: 760px) {
-    .quadradoLista {
-        grid-column: 1;
-        grid-row: 3;
-        width: calc(100% - 32px);
-        height: min(758px, calc(100vh - 150px));
-    }
+  .quadradoLista {
+    grid-column: 1;
+    grid-row: 3;
+    width: calc(100% - 32px);
+    height: min(758px, calc(100vh - 150px));
+  }
 }
-.wrapAll{
-    display: flex;
+.wrapAll {
+  display: flex;
 }
-.wrapTwo1{
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
+.wrapTwo1 {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
 }
-.wrapTwo1 input{
-    margin-left: 25px;
-    margin-top: 10px;
+.wrapTwo1 input {
+  margin-left: 25px;
+  margin-top: 10px;
 }
-.wrapTwo1 label{
-    padding-left: 25px;
+.wrapTwo1 label {
+  padding-left: 25px;
 }
-.Span{
-
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+.Span {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
-.titulos{
-    margin-left: 25px;
+.titulos {
+  margin-left: 25px;
 }
-.wrapTwo2 input{
-    margin-left: 25px;
-    margin-top: 10px;
+.wrapTwo2 input {
+  margin-left: 25px;
+  margin-top: 10px;
 }
-.wrapTwo2 label{
-    padding-left: 25px;
+.wrapTwo2 label {
+  padding-left: 25px;
 }
-.wrapSpan{
-    margin-top: 98px;
+.wrapSpan {
+  margin-top: 98px;
 }
-.wrapTwo2{
-    margin-left: 20px;
+.wrapTwo2 {
+  margin-left: 20px;
 }
-.wrapAll input:focus{
-    border: 1px solid white;
+.wrapAll input:focus {
+  border: 1px solid white;
   transition: all 200ms ease-in-out;
 }
-.obs{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+.obs {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
-.obs label{
-    margin-top: 25px;
-    padding-bottom: 25px;
-    margin-left: 35px;
+.obs label {
+  margin-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 35px;
 }
-.obs input{
-    height: 50px;
-    width: 867px;
+.obs input {
+  height: 50px;
+  width: 867px;
 }
-.botao{
-    display: flex;
-    margin-left: 600px;
-    margin-top: 15px;
+.botao {
+  display: flex;
+  margin-left: 600px;
+  margin-top: 15px;
 }
 .botao1 {
-    background-color: var(--laranja);
-    border: none;
-    width: 175px;
-    height: 40px;
-    border-radius: 5px;
-    margin-left: 20px;
-    border: 1px solid black;
-    cursor: pointer;
-
+  font-weight: 400;
+  background-color: #3d3d3d;
+  color: white;
+  border: none;
+  width: 175px;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 .botao2 {
-    background-color: var(--laranja);
-    border: none;
-    width: 175px;
-    height: 40px;
-    border-radius: 5px;
-    margin-left: 20px;
-    border: 1px solid black;
-    cursor: pointer;
+  background-color: var(--laranja);
+  border: none;
+  width: 175px;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 20px;
+  border: 1px solid black;
+  cursor: pointer;
 }
-.botao1:hover{
-    background-color: rgb(54, 54, 54);
-    border: 1px solid black;
-    color: white;
-    transition: all 200ms ease-in-out;
+.botao1:hover {
+  background-color: rgb(54, 54, 54);
+  border: 1px solid black;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+.botao2:hover {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  border: none;
+  transition: all 200ms ease-in-out;
+}
+.wrapAll2 {
+  display: flex;
+}
+.quadradoAviso h2 {
+  font-size: 28px;
+  font-weight: 160;
+  letter-spacing: 0.5cm;
+}
 
+.iconePacote {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 24px auto 16px;
+  margin-left: 14px;
+  filter: drop-shadow(0 0 12px rgba(255, 119, 0, 0.5));
 }
-.botao2:hover{
-    background-color: rgb(54, 54, 54);
-    color: white;
-    border: none;
-    transition: all 200ms ease-in-out;
+
+.quadradoAviso .p1 {
+  font-size: 17px;
+  font-weight: 250;
+}
+.quadradoAviso .p2 {
+  font-size: 17px;
+  filter: opacity(0.5);
+  font-weight: 250;
+}
+.quadradoAviso {
+  background: #331800;
+  background: linear-gradient(
+    90deg,
+    rgba(51, 24, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  width: 453px;
+  height: 753px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 25px;
 }

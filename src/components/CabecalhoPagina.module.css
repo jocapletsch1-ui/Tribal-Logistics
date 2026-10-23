@@ -22,7 +22,7 @@
   min-width: 0;
   margin: 0;
   color: #fff;
-  font-size: clamp(24px, 2.4vw, 34px);
+  font-size: clamp(40px, 2.4vw, 34px);
   font-weight: 300;
   letter-spacing: clamp(5px, 0.8vw, 11px);
   line-height: 1.1;
@@ -41,7 +41,7 @@
 .titulo {
   margin: 0;
   color: #fff;
-  font-size: clamp(24px, 2.4vw, 34px);
+  font-size: clamp(30px, 2.4vw, 34px);
   font-weight: 300;
   overflow-wrap: anywhere;
 }
