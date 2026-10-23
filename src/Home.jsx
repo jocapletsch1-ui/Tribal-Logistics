@@ -11,10 +11,7 @@ const legendaPie = [
   { nome: "Concluídos", valor: 32, cor: "#faab00" },
 ];
 
-const totalPie = legendaPie.reduce(
-  (soma, item) => soma + item.valor,
-  0
-);
+const totalPie = legendaPie.reduce((soma, item) => soma + item.valor, 0);
 
 const cardsResumo = [
   { numero: "67", titulo: "Total", texto: "Cargas em outubro" },
@@ -29,16 +26,15 @@ function Home() {
       <Sidebar />
 
       <div className={s.pagina}>
-        <CabecalhoPagina
-          titulo="Dashboard"
-          descricao="Olá gestor, bem-vindo ao menu de cargas."
-          acao={{ texto: "+ Nova carga", caminho: "/cadastrocargas" }}
-        />
+        <div className={s.CabecalhoPagina}>
+          <CabecalhoPagina
+            titulo="Dashboard"
+            descricao="Olá gestor, bem-vindo ao menu de cargas."
+            acao={{ texto: "+ Nova carga", caminho: "/cadastrocargas" }}
+          />
+        </div>
 
-        <section
-          className={s.resumoCards}
-          aria-label="Resumo de cargas"
-        >
+        <section className={s.resumoCards} aria-label="Resumo de cargas">
           {cardsResumo.map((card) => (
             <article key={card.titulo} className={s.cardResumo}>
               <div className={s.numeroCard}>{card.numero}</div>

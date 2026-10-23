@@ -44,11 +44,10 @@ function ListaCargas() {
 
       <section className={s.areaCargas}>
         <div className={s.areaFiltro}>
-        <FiltroCargas onFiltrar={setFiltros} />
-        </div>
-
-        <div className={s.resumo}>
-          Todos os registros · {cargasFiltradas.length} cargas encontradas
+          <FiltroCargas onFiltrar={setFiltros} />
+          <div className={s.resumo}>
+            Todos os registros · {cargasFiltradas.length} cargas encontradas
+          </div>
         </div>
 
         <section className={s.containerTabela}>

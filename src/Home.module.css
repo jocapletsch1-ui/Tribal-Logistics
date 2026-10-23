@@ -22,6 +22,9 @@
   box-sizing: border-box;
   padding: 0 35px 20px;
 }
+.CabecalhoPagina{
+  margin-left: -250px;
+}
 
 /* Cards de resumo */
 .resumoCards {

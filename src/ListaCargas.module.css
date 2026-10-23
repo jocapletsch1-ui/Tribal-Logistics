@@ -51,14 +51,29 @@
   height: 750px;
 }
 
-/* Resumo dos registros */
-.resumo {
+.areaFiltro {
   flex-shrink: 0;
-  margin-top: 12px;
-  padding: 10px 0;
+  width: 100%;
+  max-width: 800px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #403020;
+  border-radius: 7px;
+  background: #100c08;
+}
+
+@media (min-width: 901px) {
+  .areaFiltro {
+    margin-left: -12px;
+  }
+}
+
+.resumo {
+  margin-top: 10px;
+  padding-top: 5px;
   border-top: 1px solid #403020;
   color: #b9aaa0;
-  font-size: 12px;
+  font-size: 9px;
 }
 
 /* Cartão da tabela */

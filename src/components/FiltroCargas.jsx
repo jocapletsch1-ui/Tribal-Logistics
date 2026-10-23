@@ -89,13 +89,15 @@ export default function FiltroCargas({ onFiltrar }) {
           />
         </div>
 
-        <button className={styles.filtrar} type="submit">
-          Filtrar
-        </button>
+        <div className={styles.acoes}>
+          <button className={styles.filtrar} type="submit">
+            Filtrar
+          </button>
 
-        <button className={styles.limpar} type="button" onClick={limparFiltros}>
-          Limpar
-        </button>
+          <button className={styles.limpar} type="button" onClick={limparFiltros}>
+            Limpar
+          </button>
+        </div>
       </form>
     </>
   );
