@@ -74,9 +74,9 @@ function CadastroCargas() {
           <h1>Antes de cadastrar</h1>
           <img src={iconePacote} alt="Ícone de pacote" className={s.iconePacote} />
           <p className={s.p1}>
-            Confira peso, valor e locais de coleta e entrega...
+            Confira peso, valor e locais de coleta e entrega. Esses dados ajudam a definir o veículo adequado.
           </p>
-          <p className={s.p2}>A carga será registrada como Pendente até...</p>
+          <p className={s.p2}>A carga será registrada como pendente até que um motorista aceite.</p>
         </div>
       </div>
     </div>

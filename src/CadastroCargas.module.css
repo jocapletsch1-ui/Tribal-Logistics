@@ -167,6 +167,7 @@ body {
 .wrapAll2 {
   display: flex;
 }
+
 .quadradoAviso h2 {
   font-size: 28px;
   font-weight: 160;
@@ -199,10 +200,18 @@ body {
     rgba(51, 24, 0, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  width: 453px;
-  height: 753px;
+  width: 400px;
+  height: 727.5px;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   padding: 25px;
+  margin-right: 175px;
+  margin-top: 33px;
+  border: 0.1px solid rgba(255, 255, 255, 0.2196);
+  border-width: thin;
+}
+.iconePacote{
+  margin-top: -5px;
+  margin-left: 5px;
 }

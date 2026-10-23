@@ -6,7 +6,7 @@ const itens = [
   { nome: "Cadastro de Cargas", caminho: "/cadastrocargas", icone: "carga" },
   {
     nome: "Lista de Cargas",
-    caminho: "/home#ultimas-cargas",
+    caminho: "/listacargas",
     icone: "lista",
   },
   { nome: "Sobre", caminho: "/", icone: "sobre" },
