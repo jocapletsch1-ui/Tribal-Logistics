@@ -1,0 +1,532 @@
+.conteudo {
+  --laranja: #ff7700;
+  --laranja-escuro: #331800;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 225px;
+  grid-template-rows: minmax(0, 1fr);
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Almarai", sans-serif;
+  color: #fff;
+  background: #000;
+}
+
+.pagina {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 0 35px 20px;
+  overflow: hidden;
+}
+
+.pagina > .CabecalhoPagina {
+  flex: 0 0 auto;
+}
+
+.resumoCards {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+
+  width: 100%;
+  margin: 12px 0 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cardResumo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 80px;
+  padding: 12px 16px;
+
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 14px;
+  background: linear-gradient(
+    110deg,
+    rgb(196 89 2),
+    rgb(114 55 1)
+  );
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.resumoCards > .cardResumo {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.resumoCards > .cardResumo:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.resumoCards > .cardResumo:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.resumoCards > .cardResumo:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.cardResumo + .cardResumo {
+  margin-left: -7px;
+}
+
+.cardResumo:hover {
+  z-index: 1;
+  transform: translateY(-3px);
+}
+
+.numeroCard {
+  flex-shrink: 0;
+  min-width: 52px;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cardTextoWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.textoCard {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subTextoCard {
+  color: rgb(255 255 255 / 75%);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.areaGraficos {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+
+  display: grid;
+  grid-template-rows: minmax(150px, 0.65fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "pizza barras"
+    "tabela tabela";
+
+  gap: 18px 16px;
+  align-items: stretch;
+
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  margin: 12px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.quadrado {
+  position: absolute;
+  z-index: -1;
+  top: 40px;
+  left: -15%;
+  width: 130%;
+  height: 390px;
+
+  background: linear-gradient(
+    110deg,
+    var(--laranja-escuro),
+    #ff77009d
+  );
+
+  transform: rotate(2deg);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.graficos1 {
+  grid-area: pizza;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  margin: 0;
+  padding: 15px 16px;
+
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--laranja-escuro), #000);
+  overflow: hidden;
+}
+
+.areaGraficos > section {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.areaGraficos > section:nth-of-type(1) {
+  animation-delay: 400ms;
+}
+
+.areaGraficos > section:nth-of-type(2) {
+  animation-delay: 500ms;
+}
+
+.areaGraficos > section:nth-of-type(3) {
+  animation-delay: 600ms;
+}
+
+.tituloGrafico {
+  flex-shrink: 0;
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.corpoGrafico {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.donut {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  margin-left: -25px;
+}
+
+.donutGrafico {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.centroDonut {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.totalDonut {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.textoDonut {
+  margin-top: 4px;
+  color: rgb(255 255 255 / 55%);
+  font-size: 13px;
+}
+
+.legendaGrafico {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.itemLegenda {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.marcador {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 2px;
+}
+
+.nomeLegenda {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.valorLegenda {
+  margin: 3px 0 0;
+  color: rgb(255 255 255 / 55%);
+  font-size: 15px;
+}
+
+.graficos2 {
+  grid-area: barras;
+
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  margin: 0;
+  padding: 12px;
+
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--laranja-escuro), #000);
+  overflow: hidden;
+}
+
+.graficos2 > * {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.graficos3 {
+  grid-area: tabela;
+
+  display: flex;
+  box-sizing: border-box;
+
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+
+  border-radius: 12px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.rodape {
+  margin: 9px 0 0 24px;
+  color: rgb(255 255 255 / 65%);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.graficos3 > * {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .pagina {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .resumoCards {
+    gap: 10px;
+  }
+
+  .cardResumo + .cardResumo {
+    margin-left: 0;
+  }
+
+  .cardResumo {
+    gap: 8px;
+    padding: 12px 10px;
+  }
+
+  .numeroCard {
+    min-width: 40px;
+    font-size: 30px;
+  }
+
+  .textoCard {
+    font-size: 13px;
+  }
+
+  .subTextoCard {
+    font-size: 10px;
+  }
+
+  .graficos1 {
+    padding: 16px;
+  }
+
+  .corpoGrafico {
+    gap: 10px;
+  }
+
+  .donut {
+    transform: scale(0.85);
+    transform-origin: center;
+    margin: -10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .conteudo {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .pagina {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 0;
+    padding: 0 16px 30px;
+    overflow: visible;
+  }
+
+  .resumoCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    margin: 30px auto 0;
+    gap: 12px;
+  }
+
+  .cardResumo + .cardResumo {
+    margin-left: 0;
+  }
+
+  .cardResumo {
+    min-height: 85px;
+    padding: 12px;
+  }
+
+  .numeroCard {
+    font-size: 34px;
+  }
+
+  .textoCard {
+    font-size: 13px;
+  }
+
+  .areaGraficos {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "pizza"
+      "barras"
+      "tabela";
+
+    width: 100%;
+    max-width: none;
+    grid-template-rows: 220px 220px minmax(520px, auto);
+    flex: 0 0 auto;
+    min-height: 0;
+    gap: 20px;
+    margin: 28px auto 0;
+  }
+
+  .graficos1,
+  .graficos2 {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    margin: 0;
+  }
+
+  .graficos3 {
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+    overflow: visible;
+  }
+
+  .quadrado {
+    top: 80px;
+    left: -10%;
+    width: 120%;
+    height: 900px;
+  }
+
+  .rodape {
+    margin-left: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media (max-width: 420px) {
+  .resumoCards {
+    grid-template-columns: 1fr;
+  }
+
+  .cardResumo {
+    min-height: 76px;
+  }
+
+  .graficos1 {
+    padding: 14px 10px;
+  }
+
+  .tituloGrafico {
+    font-size: 17px;
+  }
+
+  .corpoGrafico {
+    gap: 4px;
+  }
+
+  .donut {
+    transform: scale(0.75);
+    margin: -20px;
+  }
+
+  .legendaGrafico {
+    gap: 14px;
+  }
+
+  .nomeLegenda {
+    font-size: 12px;
+  }
+}
+@keyframes entradaCascataGlobal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
