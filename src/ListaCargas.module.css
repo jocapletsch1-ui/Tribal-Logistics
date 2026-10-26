@@ -6,6 +6,8 @@
 }
 
 .conteudo {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 225px;
   grid-template-rows: auto minmax(0, 1fr);
@@ -19,7 +21,9 @@
   background: #000;
 }
 .CabecalhoPagina {
-  margin-left: -275px;
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
 }
 
 .conteudo > header {
@@ -39,33 +43,35 @@
   grid-column: 1;
   grid-row: 2;
   display: flex;
-  margin-top: 50px;
+  margin-top: 0;
   flex-direction: column;
   gap: 0;
   min-width: 0;
   min-height: 0;
-  padding: 12px;
+  padding: 12px 12px 12px 20px;
   box-sizing: border-box;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 750px;
+  overflow: hidden;
+  height: auto;
+  flex: 1;
+}
+
+.areaCargas > * {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.areaCargas > :nth-child(2) {
+  animation-delay: 120ms;
 }
 
 .areaFiltro {
   flex-shrink: 0;
   width: 100%;
-  max-width: 800px;
-  padding: 12px;
+  max-width: 2000px;
+  padding: 12px 12px 12px 12px;
   box-sizing: border-box;
   border: 1px solid #403020;
   border-radius: 7px;
   background: #100c08;
-}
-
-@media (min-width: 901px) {
-  .areaFiltro {
-    margin-left: -12px;
-  }
 }
 
 .resumo {
@@ -73,7 +79,7 @@
   padding-top: 5px;
   border-top: 1px solid #403020;
   color: #b9aaa0;
-  font-size: 9px;
+  font-size: 12.5px;
 }
 
 /* Cartão da tabela */
@@ -222,7 +228,16 @@
 @media (max-width: 760px) {
   .conteudo {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .conteudo > .CabecalhoPagina {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .conteudo > aside {
@@ -238,9 +253,31 @@
   .areaCargas {
     grid-column: 1;
     grid-row: 3;
+    min-height: 0;
+    overflow: visible;
+    padding: 10px 12px 24px;
   }
 
   .containerTabela {
-    flex: 0 0 400px;
+    flex: 0 0 auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .areaTabela {
+    flex: 0 0 auto;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+}
+@keyframes entradaCascataGlobal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

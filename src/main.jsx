@@ -8,6 +8,8 @@ import Cadastro from './Cadastro.jsx';
 import Home from './Home.jsx';
 import CadastroCargas from './CadastroCargas.jsx';
 import ListaCargas from './ListaCargas.jsx';
+import PerfilGestor from './PerfilGestor.jsx';
+import Sobre from './Sobre.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/listacargas",
     element: <ListaCargas />,
+  },
+  {
+    path: "/perfilgestor",
+    element: <PerfilGestor />,
+  },
+  {
+    path: "/sobre",
+    element: <Sobre />,
   },
 ]);
 

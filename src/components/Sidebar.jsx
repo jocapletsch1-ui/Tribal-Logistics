@@ -9,8 +9,16 @@ const itens = [
     caminho: "/listacargas",
     icone: "lista",
   },
-  { nome: "Sobre", caminho: "/", icone: "sobre" },
+  { nome: "Sobre", caminho: "/sobre", icone: "sobre" },
 ];
+
+const titulosTelas = {
+  "/sobre": "Sobre",
+  "/home": "Dashboard",
+  "/cadastrocargas": "Cadastro de Cargas",
+  "/listacargas": "Lista de Cargas",
+  "/perfilgestor": "Perfil do Gestor",
+};
 
 const caminhosIcones = {
   dashboard: (
@@ -40,6 +48,12 @@ const caminhosIcones = {
       <path d="M12 11v5m0-8h.01" />
     </>
   ),
+  perfil: (
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c1.6-3.2 4.2-4.8 8-4.8s6.4 1.6 8 4.8" />
+    </>
+  ),
   sair: (
     <>
       <path d="M10 17l5-5-5-5m5 5H3" />
@@ -67,15 +81,31 @@ function Icone({ nome }) {
 
 function Sidebar() {
   const location = useLocation();
+  const tituloTela = titulosTelas[location.pathname] ?? "Área do Gestor";
 
   return (
     <aside className={s.sidebar}>
       <div className={s.perfilGestor}>
-        <h2>Área do gestor</h2>
-        <p>Cristian Bilizário</p>
-        <span>Metalúrgica Sul Ltda.</span>
+        <div className={s.avatar} aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c1.6-3.2 4.2-4.8 8-4.8s6.4 1.6 8 4.8" />
+            <path d="M18 3v5m-2.5-2.5h5" />
+          </svg>
+        </div>
+        <div className={s.dadosGestor}>
+          <h2>{tituloTela}</h2>
+          <p>Cristian Bilizário</p>
+          <span>Metalúrgica Sul Ltda.</span>
+        </div>
       </div>
-
       <nav className={s.nav} aria-label="Navegação principal">
         {itens.map((item) => (
           <Link
@@ -104,6 +134,14 @@ function Sidebar() {
             <span>{item.nome}</span>
           </Link>
         ))}
+        <Link
+          to="/perfilgestor"
+          className={`${s.aba} ${location.pathname === "/perfilgestor" ? s.ativa : ""}`}
+          aria-current={location.pathname === "/perfilgestor" ? "page" : undefined}
+        >
+          <Icone nome="perfil" />
+          <span>Área do Perfil do Gestor</span>
+        </Link>
         <Link to="/login" className={s.aba}>  
           <Icone nome="sair" />
           <span>Sair</span>

@@ -41,6 +41,23 @@ body {
   box-sizing: border-box;
 }
 
+.quadradoLogin > .formGroup {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.quadradoLogin > .formGroup:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.quadradoLogin > .formGroup:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.quadradoLogin > a {
+  animation: entradaCascataGlobal 500ms ease-out both;
+  animation-delay: 300ms;
+}
+
 .formGroup {
   margin-bottom: 16px;
 }
@@ -119,4 +136,56 @@ body {
 .linkLogin:hover {
   opacity: 1;
   transition: all 200ms ease-in-out;
+}
+
+@media (max-width: 760px) {
+  .quadrado {
+    position: absolute;
+    top: -120px;
+    left: -10%;
+    width: 120%;
+    height: 330px;
+    margin: 0;
+  }
+
+  .quadrado h1 {
+    margin: 48px 24px;
+    font-size: clamp(30px, 8vw, 52px);
+    letter-spacing: 5px;
+  }
+
+  .quadradoLogin {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(calc(100% - 32px), 500px);
+    margin: max(150px, 25svh) auto 32px;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .quadradoLogin {
+    width: calc(100% - 24px);
+    padding: 16px 14px 18px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+
+  .botao {
+    width: 100%;
+  }
+}
+@keyframes entradaCascataGlobal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

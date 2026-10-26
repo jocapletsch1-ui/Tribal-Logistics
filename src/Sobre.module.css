@@ -1,0 +1,322 @@
+.conteudo {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 225px;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cabecalhoPagina {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.conteudo > aside {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  min-width: 0;
+  min-height: 0;
+}
+
+.pagina {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+  padding: 12px 24px 24px;
+  overflow: hidden;
+}
+
+.painelSobre {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
+  gap: 18px;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.painelSobre > * {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.painelSobre > :nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.colunaHistoria {
+  display: grid;
+  grid-template-rows: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 18px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.colunaHistoria > * {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.colunaHistoria > :nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.missao,
+.contato,
+.beneficio {
+  min-width: 0;
+  padding: 16px;
+}
+
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.beneficios > .beneficio {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.beneficios > .beneficio:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.beneficios > .beneficio:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.beneficios > .beneficio:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.beneficio h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.beneficio svg {
+  flex: 0 0 24px;
+  margin-top: 5px;
+}
+
+.contato {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.formulario {
+  display: grid;
+  gap: 12px;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+
+.campo {
+  display: flex;
+  min-width: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.campo label {
+  opacity: 0.8;
+}
+
+.campo input,
+.campo textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  background: rgb(85 35 0 / 20%);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+.campo input:hover{
+    color: white;
+    transition: all 200ms ease-in-out;
+}
+
+
+.campo input {
+  height: 36px;
+}
+
+.campo textarea {
+  height: 84px;
+  resize: none;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: rgb(255 255 255 / 72%);
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.acoes button {
+  min-width: 200px;
+  height: 40px;
+  border: 1px solid #572300;
+  border-radius: 6px;
+  background: #ff7900;
+  color: #160900;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.contatoInfo {
+  margin-top: 20px;
+  padding-top: 8px;
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  opacity: 0.8;
+}
+
+.contatoInfo p {
+  margin: 0;
+}
+
+.contatoInfo p + p {
+  margin-top: 4px;
+}
+
+@media (max-width: 1000px) {
+  .painelSobre {
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 14px;
+  }
+
+  .pagina {
+    padding: 12px 16px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .conteudo {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .conteudo > aside {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cabecalhoPagina {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .pagina {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 16px;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .painelSobre {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
+    gap: 14px;
+  }
+
+  .colunaHistoria {
+    grid-template-rows: auto auto;
+  }
+
+  .missao {
+    min-height: 180px;
+  }
+
+  .beneficios {
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-rows: none;
+  }
+
+  .contato {
+    height: auto;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .beneficios {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.contato {
+  background: linear-gradient(90deg, #bf5a01 0%, #994700 100%);
+  border-radius: 7.5px;
+}
+.missao {
+  background: linear-gradient(90deg, #ff7700 0%, #331800 100%);
+  color: white;
+  border-radius: 7.5px;
+}
+.missao,
+.contato,
+.beneficio {
+  color: white;
+}
+.beneficio {
+  background: linear-gradient(180deg, #1a0c00 20%, #0c0905 100%);
+  color: white;
+  border-radius: 7.5px;
+  border: 1px solid rgba(255, 255, 255, 0.089);
+}
+.beneficio svg {
+  color: #ff7700;
+}
+.beneficio h2 {
+  font-weight: 500;
+  margin-top: 10px;
+}
+.beneficio h2 svg{
+    margin-top: -2px;
+}
+@keyframes entradaCascataGlobal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

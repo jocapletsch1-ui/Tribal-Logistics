@@ -1,73 +1,107 @@
 .filtros {
   display: grid;
+
+  /* Distribui os campos por toda a largura disponível */
   grid-template-columns:
-    197px
-    132px
-    124px
-    107px
-    64px
-    30px;
+    minmax(0, 2.9fr)
+    minmax(0, 1.7fr)
+    minmax(0, 1.5fr)
+    minmax(0, 1.5fr)
+    auto;
+
   align-items: end;
   gap: 10px;
+
   width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
   box-sizing: border-box;
+
+  background: #0b0805;
+  border: 1px solid #493018;
+  border-radius: 8px;
 }
 
-.campo {
+.campo,
+.campoNome,
+.campoData {
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  width: 100%;
   min-width: 0;
 }
 
-.campo label {
+.campo label,
+.campoNome label,
+.campoData label {
   color: #e7ded4;
-  font-size: 9px;
+  font-size: 15px;
   white-space: nowrap;
 }
 
 .campo input,
-.campo select {
+.campo select,
+.campoNome input,
+.campoData input {
   display: block;
+
   width: 100%;
   min-width: 0;
   height: 23px;
   margin: 0;
-  box-sizing: border-box;
   padding: 0 7px;
+
+  box-sizing: border-box;
   border: 1px solid #76634f;
   border-radius: 4px;
+
   background: #17110b;
   color: #fff;
-  font-size: 9px;
+  font-family: inherit;
+  font-size: 12.5px;
+}
+
+.campo select {
+  cursor: pointer;
+}
+
+.campoData input[type="date"] {
+  color-scheme: dark;
 }
 
 .acoes {
-  display: contents;
-  align-items: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 8px;
+
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .filtrar {
-  grid-column: 5;
-}
+  flex-shrink: 0;
 
-.limpar {
-  grid-column: 6;
-}
-
-.filtrar {
   width: 64px;
   height: 24px;
   padding: 0;
+
   border: none;
   border-radius: 4px;
+
   background: #ff8500;
   color: #17100a;
-  font-size: 9px;
+
+  font-family: inherit;
+  font-size: px;
   font-weight: bold;
+
   cursor: pointer;
-  transition: all 200ms ease-in-out;
+  transition: background 200ms ease-in-out;
 }
 
 .filtrar:hover {
@@ -75,47 +109,77 @@
 }
 
 .limpar {
-  height: 23px;
+  flex-shrink: 0;
+
+  height: 24px;
   padding: 0;
+
   border: none;
   background: transparent;
   color: #ff9500;
-  font-size: 9px;
+
+  font-family: inherit;
+  font-size: 15px;
+
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+}
+
+.limpar:hover {
+  color: #ffb14d;
 }
 
 .campo input:focus,
-.campo input:hover,
-.campo select:focus {
+.campo select:focus,
+.campoNome input:focus,
+.campoData input:focus {
   outline: 1px solid #ff8500;
-  transition: all 200ms ease-in-out;
+  outline-offset: 1px;
 }
 
-.campo input[type="date"] {
-  color-scheme: dark;
-}
-
+/* Tablets e telas menores */
 @media (max-width: 760px) {
   .filtros {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .acoes {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .filtros {
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
   }
 
   .acoes {
-    display: flex;
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .filtros {
-    grid-template-columns: minmax(0, 1fr);
+    grid-column: auto;
   }
 
-  .acoes {
-    grid-column: span 1;
+  .filtrar {
+    width: 80px;
+    height: 30px;
+  }
+
+  .limpar {
+    height: 30px;
+  }
+
+  .campo input,
+  .campo select,
+  .campoNome input,
+  .campoData input {
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .campo label,
+  .campoNome label,
+  .campoData label {
+    font-size: 11px;
   }
 }

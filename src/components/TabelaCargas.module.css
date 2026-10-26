@@ -125,3 +125,18 @@
     font-size: 17px;
   }
 }
+
+@media (max-width: 760px) {
+  .container {
+    height: auto;
+    min-height: 520px;
+    overflow: visible;
+  }
+
+  .areaTabela {
+    flex: 0 0 auto;
+    min-height: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+}

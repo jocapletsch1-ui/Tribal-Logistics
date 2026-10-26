@@ -4,29 +4,34 @@
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) 225px;
+  grid-template-rows: minmax(0, 1fr);
   position: relative;
   box-sizing: border-box;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   font-family: "Almarai", sans-serif;
   color: #fff;
   background: #000;
 }
 
-/* Conteúdo da página abaixo do menu */
 .pagina {
   position: relative;
   grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-width: 0;
+  min-height: 0;
   box-sizing: border-box;
   padding: 0 35px 20px;
-}
-.CabecalhoPagina{
-  margin-left: -250px;
+  overflow: hidden;
 }
 
-/* Cards de resumo */
+.pagina > .CabecalhoPagina {
+  flex: 0 0 auto;
+}
+
 .resumoCards {
   position: relative;
   z-index: 2;
@@ -36,7 +41,7 @@
   gap: 0;
 
   width: 100%;
-  margin: 30px 0 0;
+  margin: 12px 0 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -61,6 +66,22 @@
   );
   color: #fff;
   transition: transform 0.2s ease;
+}
+
+.resumoCards > .cardResumo {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.resumoCards > .cardResumo:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.resumoCards > .cardResumo:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.resumoCards > .cardResumo:nth-child(4) {
+  animation-delay: 300ms;
 }
 
 .cardResumo + .cardResumo {
@@ -100,13 +121,13 @@
   line-height: 1.4;
 }
 
-/* Área dos gráficos e da tabela */
 .areaGraficos {
   position: relative;
   z-index: 1;
   isolation: isolate;
 
   display: grid;
+  grid-template-rows: minmax(150px, 0.65fr) minmax(0, 1fr);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-areas:
     "pizza barras"
@@ -116,12 +137,13 @@
   align-items: stretch;
 
   width: 100%;
-  margin: 22px auto 0;
+  flex: 1;
+  min-height: 0;
+  margin: 12px auto 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fundo decorativo */
 .quadrado {
   position: absolute;
   z-index: -1;
@@ -141,7 +163,6 @@
   pointer-events: none;
 }
 
-/* Card do gráfico de pizza */
 .graficos1 {
   grid-area: pizza;
 
@@ -152,7 +173,7 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  height: 191px;
+  height: auto;
   margin: 0;
   padding: 15px 16px;
 
@@ -160,6 +181,22 @@
   border-radius: 12px;
   background: linear-gradient(90deg, var(--laranja-escuro), #000);
   overflow: hidden;
+}
+
+.areaGraficos > section {
+  animation: entradaCascataGlobal 500ms ease-out both;
+}
+
+.areaGraficos > section:nth-of-type(1) {
+  animation-delay: 400ms;
+}
+
+.areaGraficos > section:nth-of-type(2) {
+  animation-delay: 500ms;
+}
+
+.areaGraficos > section:nth-of-type(3) {
+  animation-delay: 600ms;
 }
 
 .tituloGrafico {
@@ -220,7 +257,6 @@
   font-size: 13px;
 }
 
-/* Legenda do gráfico */
 .legendaGrafico {
   position: relative;
   display: flex;
@@ -258,7 +294,6 @@
   font-size: 15px;
 }
 
-/* Card do segundo gráfico */
 .graficos2 {
   grid-area: barras;
 
@@ -269,7 +304,7 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  height: 191px;
+  height: auto;
   margin: 0;
   padding: 12px;
 
@@ -285,7 +320,6 @@
   height: 100%;
 }
 
-/* Tabela ocupando toda a largura */
 .graficos3 {
   grid-area: tabela;
 
@@ -294,7 +328,8 @@
 
   width: 100%;
   min-width: 0;
-  height: 450px;
+  height: auto;
+  min-height: 0;
   margin: 0;
   padding: 0;
 
@@ -316,7 +351,6 @@
   width: 100%;
 }
 
-/* Telas médias */
 @media (max-width: 1100px) {
   .pagina {
     padding-right: 24px;
@@ -364,19 +398,22 @@
   }
 }
 
-/* Tablets e celulares */
 @media (max-width: 760px) {
   .conteudo {
     grid-template-columns: minmax(0, 1fr);
-    height: 100vh;
-    min-height: 0;
-    overflow: auto;
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
   }
 
   .pagina {
     grid-column: 1;
     grid-row: 2;
+    min-height: 0;
     padding: 0 16px 30px;
+    overflow: visible;
   }
 
   .resumoCards {
@@ -413,6 +450,9 @@
 
     width: 100%;
     max-width: none;
+    grid-template-rows: 220px 220px minmax(520px, auto);
+    flex: 0 0 auto;
+    min-height: 0;
     gap: 20px;
     margin: 28px auto 0;
   }
@@ -421,12 +461,15 @@
   .graficos2 {
     width: 100%;
     height: 220px;
+    min-height: 220px;
     margin: 0;
   }
 
   .graficos3 {
     width: 100%;
-    height: 280px;
+    height: auto;
+    min-height: 520px;
+    overflow: visible;
   }
 
   .quadrado {
@@ -438,10 +481,10 @@
 
   .rodape {
     margin-left: 0;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
-/* Celulares estreitos */
 @media (max-width: 420px) {
   .resumoCards {
     grid-template-columns: 1fr;
@@ -474,5 +517,16 @@
 
   .nomeLegenda {
     font-size: 12px;
+  }
+}
+@keyframes entradaCascataGlobal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

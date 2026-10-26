@@ -35,6 +35,7 @@ function ListaCargas() {
 
   return (
     <div className={s.conteudo}>
+      <div className="fundoDashboard" aria-hidden="true" />
     <div className={s.CabecalhoPagina}>
       <CabecalhoPagina
         titulo="Lista de Cargas"

@@ -6,6 +6,7 @@ import iconePacote from '/package-plus.png';
 function CadastroCargas() {
   return (
     <div className={s.conteudo}>
+      <div className="fundoDashboard" aria-hidden="true" />
       <CabecalhoPagina
         titulo="Cadastro de Cargas"
         descricao="Cadastre os dados da nova carga."
