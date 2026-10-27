@@ -10,6 +10,7 @@ import CadastroCargas from './CadastroCargas.jsx';
 import ListaCargas from './ListaCargas.jsx';
 import PerfilGestor from './PerfilGestor.jsx';
 import Sobre from './Sobre.jsx';
+import AlterarSenha from './alterarSenha.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
   {
     path: "/sobre",
     element: <Sobre />,
+  },
+  {
+    path: "/alterarSenha",
+    element: <AlterarSenha />,
+  },
+  {
+    path: "/AlterarSenha",
+    element: <AlterarSenha />,
   },
 ]);
 

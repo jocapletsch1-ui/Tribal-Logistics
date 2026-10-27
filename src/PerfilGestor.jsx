@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import CabecalhoPagina from "./components/CabecalhoPagina";
 import Sidebar from "./components/Sidebar";
 import s from "./PerfilGestor.module.css";
@@ -124,7 +125,9 @@ function PerfilGestor() {
                 Segurança
               </h2>
               <p>Altere sua senha pra manter o acesso protegido.</p>
+              <Link to='/AlterarSenha'>
               <button>Alterar Senha</button>
+              </Link>
             </div>
           </section>
           

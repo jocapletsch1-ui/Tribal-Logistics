@@ -361,3 +361,8 @@
     animation: none;
   }
 }
+.botaoAlterar button:hover{
+  cursor: pointer;
+  background-color: #ff8a00;
+  transition: 200ms all ease-in-out;
+}
